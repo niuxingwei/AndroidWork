@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     //    定义输入的用户名和密码两个变量
     private EditText loginAccount;
     private EditText loginPwd;
+    //    定义记住密码黄台选择
+    private CheckBox savePasswordCB;
 
     //        确定注销动作，返回桌面
     private DialogInterface.OnClickListener okButton = new DialogInterface.OnClickListener() {
@@ -57,6 +60,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         cancelButton = findViewById(R.id.login_btn_cancle);
         loginAccount = findViewById(R.id.login_edit_account);
         loginPwd = findViewById(R.id.login_edit_pwd);
+
 //    事件注册
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
