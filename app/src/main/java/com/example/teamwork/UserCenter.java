@@ -28,8 +28,10 @@ public class UserCenter extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-        intent = new Intent(UserCenter.this,Login.class);
-        startActivity(intent);
+        Intent intent1 = new Intent(Intent.ACTION_MAIN);
+        intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent1.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent1);
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 }

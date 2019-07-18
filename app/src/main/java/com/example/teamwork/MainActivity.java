@@ -9,12 +9,14 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showProgressDialog("稍等", "数据正在加载···");
+        showProgressDialog("Wait", "Loading the data···");
+
 //        欢迎界面，2s内跳转
         new Thread(new Runnable() {
             @Override
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }).start();
-
     }
 //    跳转注册界面
 
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.setTitle(title);
             progressDialog.setMessage(message);
         }
-
         progressDialog.show();
 
     }
@@ -65,6 +65,5 @@ public class MainActivity extends AppCompatActivity {
         if (progressDialog != null && progressDialog.isShowing()) {
             progressDialog.dismiss();
         }
-
     }
 }

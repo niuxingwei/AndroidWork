@@ -25,17 +25,30 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     //    定义输入的用户名和密码两个变量
     private EditText loginAccount;
     private EditText loginPwd;
-    //    定义记住密码黄台选择
     private CheckBox savePasswordCB;
+
 
     //        确定注销动作，返回桌面
     private DialogInterface.OnClickListener okButton = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
+            SharedPreferences sh = getSharedPreferences("SavedData", MODE_PRIVATE);
+            savePasswordCB = findViewById(R.id.savePasswordCB);
+            if (savePasswordCB.isChecked()) {
+                loginAccount.setText(sh.getString("user_name", ""));
+                loginPwd.setText(sh.getString("user_pwd", ""));
+
+                Log.e("MainActivity", "已选择记住密码");
+            } else {
+                loginAccount.setText(null);
+                loginPwd.setText(null);
+                Log.e("MainActivity", "未选择记住密码");
+            }
             Intent intent1 = new Intent(Intent.ACTION_MAIN);
             intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent1.addCategory(Intent.CATEGORY_HOME);
             startActivity(intent1);
+
         }
     };
     //    取消注销动作，留在当前的界面
@@ -61,10 +74,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         loginAccount = findViewById(R.id.login_edit_account);
         loginPwd = findViewById(R.id.login_edit_pwd);
 
+
 //    事件注册
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
+//        从后台获取是否记住密码状态
+//        SharedPreferences sh= getSharedPreferences("SavedData",MODE_PRIVATE);
+//        boolean isRemember = sh.getBoolean(savePasswordCB,false)
     }
 
     //    读取注册界面传递数据
