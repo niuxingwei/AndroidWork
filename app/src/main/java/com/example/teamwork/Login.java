@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login_btn_cancle:
 //                是否确定注销
                 AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
-                alertdialog.setMessage("您确定要注销吗？");
+                alertdialog.setMessage("您确定要退出吗？");
                 alertdialog.setPositiveButton("确定", okButton);
                 alertdialog.setNegativeButton("取消", cancleButton);
                 AlertDialog alertDialog = alertdialog.create();
