@@ -4,6 +4,7 @@ package com.example.teamwork;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +45,17 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         CancleButton.setOnClickListener(this);
     }
 
+//    //    存储用户数据
+////存数据
+//    public static boolean saveUserInfo(Context context, String username, String password) {
+//        SharedPreferences sharedPrefs = context.getSharedPreferences("SavedData", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPrefs.edit();
+//        editor.putString("username", username);
+//        editor.putString("password", password);
+//        editor.commit();
+//        return true;
+//    }
+
     //      事件监听
     @Override
     public void onClick(View view) {
@@ -66,12 +78,15 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
                             SharedPreferences.Editor editor = sh.edit();
 //                    使用put添加信息
                             editor.putString("user_name", name_sign);
-                            editor.putString("user_ped", pwdnew);
-//                    出现弹框告知其返回登陆界面
+                            editor.putString("user_pwd", pwdnew);
+//                            保存数据
+                            editor.apply();
+                            //                    出现弹框告知其返回登陆界面
                             Toast.makeText(Sign.this, "注册成功！您即将返回登陆界面", Toast.LENGTH_LONG).show();
                             intent = new Intent(Sign.this, Login.class);
                             startActivity(intent);
                             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
                         } else {
                             Toast.makeText(Sign.this, "密码长度至少六位", Toast.LENGTH_LONG).show();
                         }
@@ -79,7 +94,6 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
                         Toast.makeText(Sign.this, "两次输入密码不一致，请检查", Toast.LENGTH_LONG).show();
                     }
                 }
-
                 break;
             case R.id.register_btn_cancel:
                 intent = new Intent(Sign.this, Login.class);
