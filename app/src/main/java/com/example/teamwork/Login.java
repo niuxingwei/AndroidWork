@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
 //        获取用户名和密码输入的内容
         String name = loginAccount.getText().toString();
-        Log.e("AppCompatActivity", "登陆界面传值"+name);
+        Log.e("AppCompatActivity", "登陆界面传值" + name);
         String pwd = loginPwd.getText().toString();
 //        点击事件区分
         switch (view.getId()) {
@@ -95,12 +95,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                     SharedPreferences shared = getSharedPreferences("SavedData", MODE_PRIVATE);
                     String username = shared.getString("user_name", "");
-                    Log.e("AppCompatActivity","注册界面传值"+ username);
+                    Log.e("AppCompatActivity", "注册界面传值" + username);
                     String password = shared.getString("user_pwd", "");
                     if (username.equals(name) && pwd.equals(password)) {
                           /*
                     后续检测代码
                      */
+                        Toast.makeText(Login.this, "登陆成功，请稍等", Toast.LENGTH_LONG).show();
                         intent = new Intent(Login.this, UserCenter.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
