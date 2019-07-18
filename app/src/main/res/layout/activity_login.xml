@@ -20,7 +20,7 @@
             android:layout_marginTop="10dp"
             android:background="#e52525"
             android:onClick="resetpwd"
-            android:text="注册"
+            android:text="Register"
             android:textColor="#ffffff"
             android:textSize="20dp" />
 
@@ -34,7 +34,7 @@
             android:layout_marginTop="52dp"
             android:background="#545bcb"
             android:onClick="finish_login"
-            android:text="登录"
+            android:text="Login"
             android:textColor="#ffffff"
             android:textSize="20dp" />
 
@@ -59,7 +59,7 @@
             android:layout_alignParentLeft="true"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:ems="10"
-            android:hint="请输入您的密码"
+            android:hint="Please input your password"
             android:inputType="textPassword" />
 
         <EditText
@@ -71,7 +71,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginTop="20dp"
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
-            android:hint="请输入您的用户名"
+            android:hint="Please input your name"
             android:inputType="textPersonName" />
 
         <Button
@@ -85,7 +85,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:background="#3a1313"
-            android:text="退出"
+            android:text="Exit"
             android:textColor="#ffffff"
             android:textSize="20dp" />
 
@@ -97,7 +97,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:checked="false"
-            android:text="记住密码"
+            android:text="Rememner password"
             android:textSize="15dp" />
 
         <TextView
@@ -107,7 +107,7 @@
             android:layout_below="@+id/login_edit_pwd"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="修改密码"
+            android:text="Change the Password"
             android:textSize="15dp" />
     </RelativeLayout>
 

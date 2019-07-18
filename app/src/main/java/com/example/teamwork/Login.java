@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -26,9 +27,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private EditText loginAccount;
     private EditText loginPwd;
     private CheckBox savePasswordCB;
+    private TextView login_text_change_pwd;
+//    private int count = 0;
 
-
-    //        确定注销动作，返回桌面
+    //        确定退出动作，返回桌面
     private DialogInterface.OnClickListener okButton = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
@@ -62,6 +64,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        提示第一次登录需要注册
+        AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
+        alertdialog.setMessage("You need register if you are user");
+        alertdialog.setNegativeButton("Got it!", cancleButton);
+        AlertDialog alertDialog = alertdialog.create();
+        alertDialog.show();
+
         setContentView(R.layout.activity_login);
         init();
     }
@@ -73,12 +83,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         cancelButton = findViewById(R.id.login_btn_cancle);
         loginAccount = findViewById(R.id.login_edit_account);
         loginPwd = findViewById(R.id.login_edit_pwd);
+        login_text_change_pwd = findViewById(R.id.login_text_change_pwd);
 
 
 //    事件注册
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
+        login_text_change_pwd.setOnClickListener(this);
 //        从后台获取是否记住密码状态
 //        SharedPreferences sh= getSharedPreferences("SavedData",MODE_PRIVATE);
 //        boolean isRemember = sh.getBoolean(savePasswordCB,false)
@@ -109,7 +121,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login:
 //                获取输入框的信息进行下一步状态判断
                 if (name.length() < 1 || pwd.length() < 1) {
-                    Toast.makeText(Login.this, "请输入您的用户名或者密码", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Please input your name or password", Toast.LENGTH_LONG).show();
                 } else if (name.length() > 1 && pwd.length() > 1) {
                     //                    注册界面传递的数据和登录信息匹配
                     //                创建文件保存信息
@@ -122,16 +134,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                           /*
                     后续检测代码
                      */
-                        Toast.makeText(Login.this, "登陆成功，请稍等", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Successful! Please Wait···", Toast.LENGTH_LONG).show();
                         intent = new Intent(Login.this, UserCenter.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     } else {
-                        Toast.makeText(Login.this, "密码不正确", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Please check your password or password", Toast.LENGTH_LONG).show();
                     }
 
                 } else {
-                    Toast.makeText(Login.this, "请注册后登录", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Please register firstly!", Toast.LENGTH_LONG).show();
                 }
 
                 break;
@@ -145,13 +157,26 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login_btn_cancle:
 //                是否确定注销
                 AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
-                alertdialog.setMessage("您确定要退出吗？");
-                alertdialog.setPositiveButton("确定", okButton);
-                alertdialog.setNegativeButton("取消", cancleButton);
+                alertdialog.setMessage("Are you sure to exit？");
+                alertdialog.setPositiveButton("Srue", okButton);
+                alertdialog.setNegativeButton("Cancle", cancleButton);
                 AlertDialog alertDialog = alertdialog.create();
                 alertDialog.show();
+                break;
+            case R.id.login_text_change_pwd:
+
+
+                break;
             default:
                 break;
         }
     }
+
+//    //    检测用户名是否存在
+//    public boolean Exit(String name) {
+//
+//        String namea[] = new String[10];//最多保存十名用户
+//
+//
+//    }
 }

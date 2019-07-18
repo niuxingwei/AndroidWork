@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+
 public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
@@ -66,4 +67,8 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.dismiss();
         }
     }
+
+
+//    设置背景透明度
+
 }
