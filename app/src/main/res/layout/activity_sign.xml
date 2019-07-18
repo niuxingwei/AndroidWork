@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:drawableLeft="@android:drawable/ic_menu_myplaces"
         android:ems="10"
-        android:hint="请输入您的用户名"
+        android:hint="Please enter your username"
         android:inputType="textPersonName" />
 
     <EditText
@@ -30,7 +30,7 @@
         android:layout_alignRight="@+id/resetpwd_edit_name"
         android:drawableLeft="@android:drawable/ic_lock_idle_lock"
         android:ems="10"
-        android:hint="请输入您的密码"
+        android:hint="Please enter your password."
         android:inputType="textPassword" />
 
     <Button
@@ -42,7 +42,7 @@
         android:layout_alignLeft="@+id/register_btn_sure"
         android:layout_marginTop="10dp"
         android:background="#f71818"
-        android:text="取消"
+        android:text="Cancle"
         android:textSize="20dp" />
 
     <EditText
@@ -53,7 +53,7 @@
         android:layout_centerHorizontal="true"
         android:drawableLeft="@android:drawable/ic_lock_idle_lock"
         android:ems="10"
-        android:hint="请确认您的密码"
+        android:hint="Please confirm your password."
         android:inputType="textPassword" />
 
     <Button
@@ -65,7 +65,7 @@
         android:layout_alignLeft="@+id/resetpwd_edit_pwd_new"
         android:layout_marginTop="20dp"
         android:background="#1cf718"
-        android:text="确定"
+        android:text="Sure"
         android:textSize="20dp" />
 
 

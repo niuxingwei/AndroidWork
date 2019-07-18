@@ -68,7 +68,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
 //                判断密码是否正确
 //                密码正确则保存用户信息并且跳转登陆界面
                 if (name_sign.length() < 1 || pwdnew.length() < 1 || pwdold.length() < 1) {
-                    Toast.makeText(Sign.this, "注册信息不完整，请检查！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Sign.this, "Registration information is incomplete, please check it", Toast.LENGTH_LONG).show();
                 } else {
 //                    两次输入密码一致，检测其长度
                     if (pwdnew.equals(pwdold)) {
@@ -82,16 +82,16 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
 //                            保存数据
                             editor.apply();
                             //                    出现弹框告知其返回登陆界面
-                            Toast.makeText(Sign.this, "注册成功！您即将返回登陆界面", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Sign.this, "Success! You are about to return to the landing interface", Toast.LENGTH_LONG).show();
                             intent = new Intent(Sign.this, Login.class);
                             startActivity(intent);
                             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
                         } else {
-                            Toast.makeText(Sign.this, "密码长度至少六位", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Sign.this, "Password length at least six bits", Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        Toast.makeText(Sign.this, "两次输入密码不一致，请检查", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Sign.this, "Two inconsistencies in password input, please check", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
