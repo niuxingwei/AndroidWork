@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 //        提示第一次登录需要注册
         AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
-        alertdialog.setMessage("You need register if you are user");
+        alertdialog.setMessage("You need register if you are newuser");
         alertdialog.setNegativeButton("Got it!", cancleButton);
         AlertDialog alertDialog = alertdialog.create();
         alertDialog.show();
@@ -139,7 +139,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     } else {
-                        Toast.makeText(Login.this, "Please check your password or password", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Please check your username or password", Toast.LENGTH_LONG).show();
                     }
 
                 } else {
