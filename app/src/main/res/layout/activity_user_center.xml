@@ -96,12 +96,15 @@
         android:textColor="#ffffff"
         android:textSize="20dp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/CenterTime"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/center_title"
-        android:layout_marginTop="32dp"
-        android:hint="请输入要查询的网站"/>
+        android:layout_below="@+id/back"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="时间"
+        android:textSize="22dp" />
 
 
 </RelativeLayout>

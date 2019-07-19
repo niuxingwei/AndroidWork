@@ -4,6 +4,7 @@ package com.example.teamwork;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.Context;
 
@@ -11,6 +12,7 @@ import android.content.ServiceConnection;
 import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -78,12 +80,14 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.activity_main_);
-        } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.my_activity_land);
+            Log.e("onServiceConnected","横屏");
+        } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.activity_main_);
+            Log.e("onServiceConnected","薯片");
         }
         Log.e("MainActivity", "onResume()");
         init();
@@ -192,6 +196,7 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
     }
 
     private Handler myHandler = new Handler() {
+
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -213,7 +218,12 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+        if (mVideoView.isPlaying()){
+            int position = seekBar.getProgress();
+            mVideoView.seekTo(position);
+        }
     }
+
 }
 
 

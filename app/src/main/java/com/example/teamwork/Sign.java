@@ -38,7 +38,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         init();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         Date date = new Date(System.currentTimeMillis());
-        timeText.setText( simpleDateFormat.format(date));
+        timeText.setText(simpleDateFormat.format(date));
     }
 
     //    初始化成员变量

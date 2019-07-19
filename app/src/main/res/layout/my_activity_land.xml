@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/papertwo"
+    android:background="@drawable/paperone"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="3"
@@ -12,7 +12,8 @@
     <TextView
         android:id="@+id/Text_View"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="23dp"
 
 
         android:gravity="center"
@@ -25,12 +26,10 @@
 
     <VideoView
         android:id="@+id/Video_view"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="1980dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="1dp"
-        />
+        android:layout_marginRight="-9dp" />
 
     <SeekBar
         android:id="@+id/SeekBar"
@@ -42,7 +41,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="0pt"
+        android:layout_gravity="center"
         >
         <Button
             android:id="@+id/Button"
@@ -55,13 +55,13 @@
             tools:layout_editor_absoluteY="-12dp"
             android:layout_weight="2" />
 
+
         <Button
-            android:id="@+id/plus"
+            android:id="@+id/minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="＋" />
-
+            android:text="-" />
         <TextView
             android:id="@+id/volume"
             android:gravity="center_horizontal"
@@ -69,13 +69,14 @@
             android:layout_height="wrap_content"
             android:text="0"
             />
+
+
         <Button
-            android:id="@+id/minus"
-            android:gravity="center_horizontal"
+            android:id="@+id/plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            />
+            android:gravity="center_horizontal"
+            android:text="＋" />
 
     </LinearLayout>
 

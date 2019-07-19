@@ -10,10 +10,11 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:gravity="center"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="72dp"
+        android:gravity="center"
         android:text="直须看尽洛城花,始共春风容易别。"
-        android:textSize="23dp"/>
+        android:textSize="23dp" />
 
 
     <Button
@@ -25,7 +26,7 @@
         android:layout_alignLeft="@+id/register_btn_sure"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="-8dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="98dp"
         android:background="#0000"
         android:text="Video Player"
         android:textSize="20dp" />
@@ -37,7 +38,7 @@
         android:layout_below="@+id/title"
         android:layout_marginStart="230dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="96dp"
         android:background="#0000"
         android:text="Music Player"
         android:textSize="20dp" />
@@ -54,8 +55,6 @@
         android:textSize="26dp" />
 
 
-
-
     <Button
         android:id="@+id/NAV_EXIT"
         android:layout_width="fill_parent"
@@ -65,7 +64,7 @@
         android:layout_alignLeft="@+id/resetpwd_edit_pwd_new"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="269dp"
         android:background="#0000"
         android:text="Exit"
         android:textSize="20dp" />
