@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_roundmy"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserCenter_video"></activity>
+        <activity android:name=".NavBar" />
+
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".UserCenter" />
         <activity android:name=".Login" />

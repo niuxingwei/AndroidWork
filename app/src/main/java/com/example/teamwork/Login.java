@@ -132,7 +132,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     后续检测代码
                      */
                         Toast.makeText(Login.this, "Successful! Please Wait···", Toast.LENGTH_LONG).show();
-                        intent = new Intent(Login.this, UserCenter.class);
+                        intent = new Intent(Login.this, NavBar.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     } else {

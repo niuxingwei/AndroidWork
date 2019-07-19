@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sign"
+    android:background="@drawable/sign">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:text="直须看尽洛城花,始共春风容易别。"
+        android:textSize="23dp"/>
+
+
+    <Button
+        android:id="@+id/NAV_VIEDO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignStart="@+id/register_btn_sure"
+        android:layout_alignLeft="@+id/register_btn_sure"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginTop="141dp"
+        android:background="#0000"
+        android:text="Video Player"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/NAV_MUSIC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="230dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="139dp"
+        android:background="#0000"
+        android:text="Music Player"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/NAVTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NAV_EXIT"
+        android:layout_marginTop="25dp"
+        android:background="#0000"
+        android:gravity="center"
+        android:text="Time"
+        android:textSize="26dp" />
+
+
+
+
+    <Button
+        android:id="@+id/NAV_EXIT"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignStart="@+id/resetpwd_edit_pwd_new"
+        android:layout_alignLeft="@+id/resetpwd_edit_pwd_new"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="340dp"
+        android:background="#0000"
+        android:text="Exit"
+        android:textSize="20dp" />
+
+</RelativeLayout>
