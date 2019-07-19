@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
 
     <RelativeLayout
         android:id="@+id/login_view"
@@ -18,11 +19,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="10dp"
-            android:background="#e52525"
+            android:background="#0000"
             android:onClick="resetpwd"
             android:text="Register"
             android:textColor="#ffffff"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
 
         <Button
             android:id="@+id/login"
@@ -32,14 +34,15 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="52dp"
-            android:background="#545bcb"
+            android:background="#0000"
             android:onClick="finish_login"
             android:text="Login"
             android:textColor="#ffffff"
             android:textSize="20dp" />
 
-        <ImageView
+        <TextView
             android:id="@+id/logo"
+            android:gravity="center"
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_alignWithParentIfMissing="false"
@@ -48,7 +51,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/login" />
+            android:lineSpacingMultiplier="1.2"
+            android:text="忆梅下西洲，折梅寄江北。"
+            android:textSize="27dp"
+            />
 
         <EditText
             android:id="@+id/login_edit_pwd"
@@ -84,7 +90,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:background="#3a1313"
+            android:background="#0000"
             android:text="Exit"
             android:textColor="#ffffff"
             android:textSize="20dp" />
@@ -101,13 +107,13 @@
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/login_text_change_pwd"
-            android:layout_width="60dp"
+            android:id="@+id/ShowTime"
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_below="@+id/login_edit_pwd"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="Change the Password"
+            android:text="CurrentTime"
             android:textSize="15dp" />
     </RelativeLayout>
 

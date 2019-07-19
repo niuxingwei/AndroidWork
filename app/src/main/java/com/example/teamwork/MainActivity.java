@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
      * 提示加载
      */
     public void showProgressDialog(String title, String message) {
+//        Window window = progressDialog.getWindow();
+//        WindowManager.LayoutParams lp = window.getAttributes();
+//        lp.alpha = 0.7f;
+//        lp.dimAmount=0.8f;
+//        window.setAttributes(lp);
         if (progressDialog == null) {
 
             progressDialog = ProgressDialog.show(MainActivity.this, title,
@@ -53,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (progressDialog.isShowing()) {
             progressDialog.setTitle(title);
             progressDialog.setMessage(message);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
         }
         progressDialog.show();
 

@@ -12,7 +12,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Sign extends AppCompatActivity implements View.OnClickListener {
@@ -23,6 +27,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
     private EditText signmUser_name;
     private EditText signUser_pwd;
     private EditText signRepet_pwd;
+    private TextView timeText;
 
 
     //函数入口
@@ -31,6 +36,9 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
         init();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        Date date = new Date(System.currentTimeMillis());
+        timeText.setText( simpleDateFormat.format(date));
     }
 
     //    初始化成员变量
@@ -40,6 +48,7 @@ public class Sign extends AppCompatActivity implements View.OnClickListener {
         signmUser_name = findViewById(R.id.resetpwd_edit_name);
         signUser_pwd = findViewById(R.id.resetpwd_edit_pwd_new);
         signRepet_pwd = findViewById(R.id.resetpwd_edit_pwd_old);
+        timeText = findViewById(R.id.SIGNTime);
 //        事件注册
         SureButton.setOnClickListener(this);
         CancleButton.setOnClickListener(this);

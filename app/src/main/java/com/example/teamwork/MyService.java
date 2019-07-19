@@ -1,8 +1,10 @@
 package com.example.teamwork;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -10,40 +12,9 @@ import android.util.Log;
 public class MyService extends Service {
     private final String TAG = "MyService";
 
-    private MediaPlayer mediaPlayer;
+    private  MediaPlayer mediaPlayer;
 
-    private int startId;
-
-
-    public enum Control{
-        PLAY, PAUSE, STOP;
-    }
     public MyService() {
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        this.startId= startId;
-        Log.e(TAG, "onStartCommand---startId: " + startId);
-        Bundle bundle = intent.getExtras();
-        if (bundle!=null){
-            Control control = (Control) bundle.getSerializable("key");
-            if (control!=null){
-                switch (control){
-                    case PLAY:
-                        play();
-                        break;
-                    case PAUSE:
-                        pause();
-                        break;
-                    case STOP:
-                        stop();
-                        break;
-                }
-            }
-        }
-        return super.onStartCommand(intent, flags, startId);
-
     }
 
     @Override
@@ -55,28 +26,47 @@ public class MyService extends Service {
         }
         super.onDestroy();
     }
-    private void play() {
-        if (!mediaPlayer.isPlaying()) {
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return new MyBind();
+    }
+
+    //    播放音乐
+    public  void playMusic(Context context) {
+        try {
+            mediaPlayer = MediaPlayer.create(context, R.raw.music);
             mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.start();
+                }
+            });
+        } catch (Exception e) {
+            Log.e("UserCenter", "播放失败");
+        }
+
+    }
+
+    //    暂停音乐
+    public void stopMusic() {
+        if (null != mediaPlayer) {
+            mediaPlayer.stop();
         }
     }
 
-    private void pause() {
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+    //    停止音乐
+    public void pauseMusic() {
+
+        if (null != mediaPlayer) {
             mediaPlayer.pause();
         }
     }
 
-    private void stop() {
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
+    class MyBind extends Binder{
+        public MyService getMyService(){
+            return MyService.this;
         }
-        stopSelf(startId);
-    }
-    @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        Log.e(TAG, "onBind");
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

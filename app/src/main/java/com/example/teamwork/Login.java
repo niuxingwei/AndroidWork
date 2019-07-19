@@ -7,14 +7,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -27,7 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private EditText loginAccount;
     private EditText loginPwd;
     private CheckBox savePasswordCB;
-    private TextView login_text_change_pwd;
+    private TextView ShowTime;
 //    private int count = 0;
 
     //        确定退出动作，返回桌面
@@ -70,8 +75,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         alertdialog.setMessage("You need register if you are newuser");
         alertdialog.setNegativeButton("Got it!", cancleButton);
         AlertDialog alertDialog = alertdialog.create();
+//        Window window = alertDialog.getWindow();
+//        window.setBackgroundDrawable(new ColorDrawable(3));
         alertDialog.show();
-
         setContentView(R.layout.activity_login);
         init();
     }
@@ -83,30 +89,21 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         cancelButton = findViewById(R.id.login_btn_cancle);
         loginAccount = findViewById(R.id.login_edit_account);
         loginPwd = findViewById(R.id.login_edit_pwd);
-        login_text_change_pwd = findViewById(R.id.login_text_change_pwd);
+        ShowTime = findViewById(R.id.ShowTime);
+
 
 
 //    事件注册
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
-        login_text_change_pwd.setOnClickListener(this);
+        ShowTime.setOnClickListener(this);
+
 //        从后台获取是否记住密码状态
 //        SharedPreferences sh= getSharedPreferences("SavedData",MODE_PRIVATE);
 //        boolean isRemember = sh.getBoolean(savePasswordCB,false)
     }
 
-    //    读取注册界面传递数据
-//    public static Map<String, String> getSavedUserInfo(Context context) {
-//        SharedPreferences shared = context.getSharedPreferences("SaveData", context.MODE_PRIVATE);
-//        String username = shared.getString("user_name", null);
-//        Log.e("AppCompatActivity",username);
-//        String password = shared.getString("user_pwd", null);
-//        Map<String, String> map = new HashMap<String, String>();
-//        map.put("username", username);
-//        map.put("password", password);
-//        return map;
-//    }
 
     //     事件监听
     @Override
@@ -163,9 +160,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog alertDialog = alertdialog.create();
                 alertDialog.show();
                 break;
-            case R.id.login_text_change_pwd:
-
-
+            case R.id.ShowTime:
+//                获取当前时间
+                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+                Date date = new Date(System.currentTimeMillis());
+                AlertDialog.Builder TimeDialog = new AlertDialog.Builder(this);
+                TimeDialog.setMessage(simpleDateFormat.format(date));
+                TimeDialog.setPositiveButton("Thanks", cancleButton);
+                AlertDialog alertDialg = TimeDialog.create();
+                alertDialg.show();
                 break;
             default:
                 break;
