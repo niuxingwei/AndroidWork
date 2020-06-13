@@ -25,10 +25,10 @@
 
     <VideoView
         android:id="@+id/Video_view"
-        android:layout_gravity="center_horizontal"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:layout_marginLeft="35dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="2dp" />
 
     <SeekBar
         android:id="@+id/SeekBar"

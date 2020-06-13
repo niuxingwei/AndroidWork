@@ -1,6 +1,7 @@
 package com.example.teamwork;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -25,7 +26,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
-
 
 
 public class UserCenter_video extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
@@ -83,11 +83,11 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.my_activity_land);
-            Log.e("onServiceConnected","横屏");
+            Log.e("onServiceConnected", "横屏");
         } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.activity_main_);
-            Log.e("onServiceConnected","薯片");
+            Log.e("onServiceConnected", "薯片");
         }
         Log.e("MainActivity", "onResume()");
         init();
@@ -134,12 +134,14 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
     }
 
     //       在UI主线程中不可以进行任何复杂的操作
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     public void onClick(View view) {
 //      开启子线程，更新进度
         //      点击出现对话框
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 //        获取最大音量和当前音量
+        assert audioManager != null;
         int maxVolum = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         int minVolum = audioManager.getStreamMinVolume(AudioManager.STREAM_MUSIC);
         switch (view.getId()) {
@@ -160,7 +162,6 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void run() {
                         while (mVideoView.isPlaying()) {
-
                             int progress = mVideoView.getCurrentPosition();
                             Message message = new Message();
                             message.arg1 = progress;
@@ -218,7 +219,7 @@ public class UserCenter_video extends AppCompatActivity implements View.OnClickL
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
-        if (mVideoView.isPlaying()){
+        if (mVideoView.isPlaying()) {
             int position = seekBar.getProgress();
             mVideoView.seekTo(position);
         }

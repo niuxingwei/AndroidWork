@@ -1,3 +1,11 @@
 <resources>
+    <string name="titleFont">直须看尽洛城花,始共春风容易别。</string>
     <string name="app_name">TeamWork</string>
+    <string name="Dial">Dial</string>
+    <string name="Call">Call</string>
+    <string name="welcome">欢迎来到通讯录！</string>
+    <string name="enter">进入程序</string>
+    <string name="quit">退出程序</string>
+    <string name="Shark">进入传感器</string>
+    <string name="sharkTimes">您当前走了0步</string>
 </resources>

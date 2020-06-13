@@ -88,19 +88,6 @@ public class UserCenter extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-//    private ServiceConnection sc = new ServiceConnection() {
-//        @Override
-//        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-//            MyService.MyBind bind = (MyService.MyBind) iBinder;
-//            service = bind.getMyService();
-//        }
-//
-//        @Override
-//        public void onServiceDisconnected(ComponentName componentName) {
-//
-//        }
-//    };
-
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, MyService.class);

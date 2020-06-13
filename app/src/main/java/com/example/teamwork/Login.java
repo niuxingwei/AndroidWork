@@ -69,14 +69,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        提示第一次登录需要注册
         AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
         alertdialog.setMessage("You need register if you are newuser");
         alertdialog.setNegativeButton("Got it!", cancleButton);
         AlertDialog alertDialog = alertdialog.create();
-//        Window window = alertDialog.getWindow();
-//        window.setBackgroundDrawable(new ColorDrawable(3));
         alertDialog.show();
         setContentView(R.layout.activity_login);
         init();
@@ -90,9 +86,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         loginAccount = findViewById(R.id.login_edit_account);
         loginPwd = findViewById(R.id.login_edit_pwd);
         ShowTime = findViewById(R.id.ShowTime);
-
-
-
 //    事件注册
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
@@ -162,7 +155,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.ShowTime:
 //                获取当前时间
-                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
                 Date date = new Date(System.currentTimeMillis());
                 AlertDialog.Builder TimeDialog = new AlertDialog.Builder(this);
                 TimeDialog.setMessage(simpleDateFormat.format(date));
@@ -174,12 +167,4 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
-
-//    //    检测用户名是否存在
-//    public boolean Exit(String name) {
-//
-//        String namea[] = new String[10];//最多保存十名用户
-//
-//
-//    }
 }

@@ -6,16 +6,16 @@
     tools:context=".Sign"
     android:background="@drawable/sign">
 
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="96dp"
         android:gravity="center"
-        android:text="直须看尽洛城花,始共春风容易别。"
-        android:textSize="23dp" />
-
+        android:text="@string/titleFont"
+        android:textSize="23sp" />
 
     <Button
         android:id="@+id/NAV_VIEDO"
@@ -24,24 +24,60 @@
         android:layout_below="@+id/title"
         android:layout_alignStart="@+id/register_btn_sure"
         android:layout_alignLeft="@+id/register_btn_sure"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="-8dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
         android:background="#0000"
         android:text="Video Player"
-        android:textSize="20dp" />
+        android:textSize="14dp" />
+    <Button
+        android:id="@+id/NAV_CALL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignStart="@+id/register_btn_sure"
+        android:layout_alignLeft="@+id/register_btn_sure"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="140dp"
+        android:background="#0000"
+        android:text="DIAL CALL"
+        android:textSize="14dp" />
+    <Button
+        android:id="@+id/takePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/NAV_VIEDO"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="82dp"
+        android:background="#0000"
+        android:text="PHOTO"
+        android:textSize="14dp" />
 
     <Button
         android:id="@+id/NAV_MUSIC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="80dp"
         android:background="#0000"
         android:text="Music Player"
-        android:textSize="20dp" />
+        android:textSize="14dp" />
+    <Button
+        android:id="@+id/NAV_SHAKE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="280dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="140dp"
+        android:background="#0000"
+        android:text="Count Step"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/NAVTime"
@@ -68,5 +104,7 @@
         android:background="#0000"
         android:text="Exit"
         android:textSize="20dp" />
+
+
 
 </RelativeLayout>

@@ -8,8 +8,7 @@
     <RelativeLayout
         android:id="@+id/login_view"
         android:layout_width="400dp"
-        android:layout_height="800dp"
-        android:layout_centerInParent="true">
+        android:layout_height="800dp">
 
         <Button
             android:id="@+id/register"
@@ -22,9 +21,7 @@
             android:background="#0000"
             android:onClick="resetpwd"
             android:text="Register"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/login"
@@ -37,24 +34,33 @@
             android:background="#0000"
             android:onClick="finish_login"
             android:text="Login"
-            android:textColor="#ffffff"
             android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/logo"
-            android:gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:layout_alignWithParentIfMissing="false"
+        <Button
+            android:id="@+id/login_btn_cancle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:lineSpacingMultiplier="1.2"
-            android:text="忆梅下西洲，折梅寄江北。"
-            android:textSize="27dp"
-            />
+            android:layout_marginTop="10dp"
+            android:background="#0000"
+            android:text="Exit"
+            android:textColor="#00FF33"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/savePasswordCB"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/login_edit_pwd"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:checked="false"
+            android:text="Rememner password"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/login_edit_pwd"
@@ -80,31 +86,20 @@
             android:hint="Please input your name"
             android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/login_btn_cancle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register"
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_alignWithParentIfMissing="false"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:background="#0000"
-            android:text="Exit"
-            android:textColor="#ffffff"
-            android:textSize="20dp" />
-
-        <CheckBox
-            android:id="@+id/savePasswordCB"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/login_edit_pwd"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:checked="false"
-            android:text="Rememner password"
-            android:textSize="15dp" />
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.2"
+            android:text="登陆注册"
+            android:textSize="27dp" />
 
         <TextView
             android:id="@+id/ShowTime"

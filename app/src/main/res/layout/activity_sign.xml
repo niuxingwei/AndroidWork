@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Sign"
-    android:background="@drawable/sign">
+    android:background="@drawable/center">
 
     <TextView
         android:id="@+id/title"
@@ -13,6 +13,7 @@
         android:gravity="center"
         android:layout_alignParentTop="true"
         android:text="南风知我意，吹梦到西洲。"
+        android:textColor="#00FF33"
         android:textSize="23dp"/>
 
     <EditText
@@ -65,6 +66,7 @@
         android:layout_marginLeft="-8dp"
         android:layout_marginTop="14dp"
         android:background="#0000"
+        android:textColor="#00FF33"
         android:text="Cancle"
         android:textSize="20dp" />
 
@@ -76,6 +78,7 @@
         android:layout_marginTop="60dp"
         android:background="#0000"
         android:gravity="center"
+        android:textColor="#00FF33"
         android:text="Time"
         android:textSize="26dp" />
 
@@ -91,6 +94,7 @@
         android:inputType="textPassword" />
 
     <Button
+        android:textColor="#00FF33"
         android:id="@+id/register_btn_sure"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

@@ -12,9 +12,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NavBar extends AppCompatActivity implements View.OnClickListener {
-    private Button video;
-    private Button music;
-    private Button exit;
+    private Button video, music, exit, shake, call, photo;
+    //定义进入拍照按钮界面
     private TextView Navtime;
     private Intent intent;
     //        确定退出动作，返回桌面
@@ -49,27 +48,46 @@ public class NavBar extends AppCompatActivity implements View.OnClickListener {
         music = findViewById(R.id.NAV_MUSIC);
         exit = findViewById(R.id.NAV_EXIT);
         Navtime = findViewById(R.id.NAVTime);
-
+        photo = findViewById(R.id.takePhoto);
+        shake = findViewById(R.id.NAV_SHAKE);
+        call = findViewById(R.id.NAV_CALL);
 //    事件注册
         video.setOnClickListener(this);
         music.setOnClickListener(this);
         exit.setOnClickListener(this);
+        photo.setOnClickListener(this);
+        shake.setOnClickListener(this);
+        call.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.NAV_MUSIC:
-                Toast.makeText(NavBar.this, "Successful! Please Wait···", Toast.LENGTH_LONG).show();
+                Toast.makeText(NavBar.this, "Successful! Please Wait···", Toast.LENGTH_SHORT).show();
                 intent = new Intent(NavBar.this, UserCenter.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             case R.id.NAV_VIEDO:
-                Toast.makeText(NavBar.this, "Successful! Please Wait···", Toast.LENGTH_LONG).show();
+                Toast.makeText(NavBar.this, "Successful! Please Wait···", Toast.LENGTH_SHORT).show();
                 intent = new Intent(NavBar.this, UserCenter_video.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+            case R.id.takePhoto:
+                Toast.makeText(NavBar.this, "Successful! Please Wait···", Toast.LENGTH_SHORT).show();
+                intent = new Intent(NavBar.this, takePhoto.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
+            case R.id.NAV_CALL:
+                intent = new Intent(NavBar.this, FunctionView.class);
+                startActivity(intent);
+                break;
+            case R.id.NAV_SHAKE:
+                intent = new Intent(NavBar.this, shark.class);
+                startActivity(intent);
                 break;
             default:
                 AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
